@@ -41,3 +41,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 3763433767
+    locked: 0
+  - name: Foreground
+    uniqueID: 2969670707
+    locked: 0
+  - name: Ground
+    uniqueID: 681864115
+    locked: 0
+  - name: Player
+    uniqueID: 1991973435
+    locked: 0
+  - name: Walkway
+    uniqueID: 620956837
+    locked: 0
+  - name: Eq
+    uniqueID: 2741615353
+    locked: 0
+  - name: Gun
+    uniqueID: 1374424591
+    locked: 0

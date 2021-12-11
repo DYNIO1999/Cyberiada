@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class FirePoint : MonoBehaviour
 {
-    Transform firePoint;
 
-    Vector2 lookDirection;
+    public Vector2 lookDirection;
     public static float lookAngle;
 
     private void Update()
@@ -14,7 +13,7 @@ public class FirePoint : MonoBehaviour
         lookDirection = Camera.main.WorldToScreenPoint(Input.mousePosition);
         lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
 
-        firePoint.rotation = Quaternion.Euler(0, 0, lookAngle);
+        transform.rotation = Quaternion.Euler(0, 0, lookAngle);
 
 
     }
