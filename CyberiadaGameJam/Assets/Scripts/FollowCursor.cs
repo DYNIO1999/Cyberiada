@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class FollowCursor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private float lookAngle;
+    private float mouseXposition;
+    private float mouseYpositon;
+
+    private void Update()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
