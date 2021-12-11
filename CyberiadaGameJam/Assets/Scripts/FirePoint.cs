@@ -10,11 +10,10 @@ public class FirePoint : MonoBehaviour
 
     private void Update()
     {
-        lookDirection = Camera.main.WorldToScreenPoint(Input.mousePosition);
+        lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-
-        transform.rotation = Quaternion.Euler(0, 0, lookAngle);
-
+        
+        transform.rotation = Quaternion.Euler(0, 0, lookAngle - 90f);
 
     }
 
