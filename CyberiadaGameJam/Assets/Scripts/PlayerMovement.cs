@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
-
     private Rigidbody2D playerBody;
     private CapsuleCollider2D playerCollider;
     private float horizontal;
@@ -11,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float velocity;
 
-    public static bool isOnGround;
+    [SerializeField] private bool isOnGround;
     
     void Start()
     {
@@ -32,5 +31,15 @@ public class PlayerMovement : MonoBehaviour
     {
         playerBody.velocity = new Vector2(horizontal * velocity, playerBody.velocity.y); 
     }
+
+   
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision !=null)
+        {
+            isOnGround = true;
+        }
+    }
+
 }
 
