@@ -7,6 +7,13 @@ public class BulletCheck : MonoBehaviour
 
 
     public float range_limit = 100;
+    int bounce_count = 0;
+
+
+    private void BounceOff()
+    {
+
+    }
 
     void Update()
     {
@@ -25,6 +32,15 @@ public class BulletCheck : MonoBehaviour
         {
             Object.Destroy(gameObject);
         }
-        
+
+        if (collision.CompareTag("Wall"))
+        {
+            bounce_count++;
+            if (bounce_count > 1)
+            {
+                Object.Destroy(gameObject);
+            }
+
+        }
     }
 }
