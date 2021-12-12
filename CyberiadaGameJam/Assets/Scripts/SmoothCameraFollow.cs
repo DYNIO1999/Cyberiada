@@ -14,9 +14,6 @@ public class SmoothCameraFollow : MonoBehaviour
         private Vector3 velocity;
 
 
-        /// Fix that shit idiot
-
-
         private void LateUpdate()
         {
             transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref velocity, smoothTime);

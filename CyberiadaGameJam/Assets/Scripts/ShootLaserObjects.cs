@@ -21,7 +21,7 @@ public class ShootLaserObjects : MonoBehaviour
     [SerializeField]
     float bulletSpeed;
 
-    private float lookAngle;
+    public static float lookAngle;
     private bool lookingLeft;
 
     private void Update()
@@ -31,6 +31,8 @@ public class ShootLaserObjects : MonoBehaviour
         mp.z = 0;
         Vector3 gm = mp - pp;
         gm.Normalize();
+
+
         
         transform.position = new Vector3(gm.x, gm.y, 0) + pp;
       
@@ -39,7 +41,7 @@ public class ShootLaserObjects : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, lookAngle -90);
 
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
 
             Shoot();
@@ -51,6 +53,7 @@ public class ShootLaserObjects : MonoBehaviour
     {
         GameObject bulletClone = Instantiate(bullet, Muzzle.position, Muzzle.rotation);
         bulletClone.GetComponent<Rigidbody2D>().velocity = Muzzle.up * bulletSpeed;
+        //bulletClone.GetComponent<Rigidbody2D>().freezeRotation = true;
     }
 }
 
