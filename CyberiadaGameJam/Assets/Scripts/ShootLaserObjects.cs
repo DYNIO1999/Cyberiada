@@ -21,6 +21,11 @@ public class ShootLaserObjects : MonoBehaviour
     [SerializeField]
     float bulletSpeed;
 
+    [SerializeField]
+    float fireRate;
+
+    private float lastShot = 0.0f;
+    
     public static float lookAngle;
     private bool lookingLeft;
 
@@ -44,7 +49,12 @@ public class ShootLaserObjects : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            Shoot();
+            if (Time.time > fireRate + lastShot)
+            {
+                Shoot();
+                lastShot = Time.time;
+            }
+
         }
     }
 
