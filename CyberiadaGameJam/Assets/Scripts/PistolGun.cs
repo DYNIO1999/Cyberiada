@@ -28,7 +28,7 @@ public class PistolGun : MonoBehaviour
     private float lastShot = 0.0f;
 
     public static float lookAngle;
-    public static bool lookingLeft;
+    
 
     private void Update()
     {
@@ -47,29 +47,32 @@ public class PistolGun : MonoBehaviour
 
         //transform.position = new Vector3(gm.x, gm.y, 0) + pp;
 
+        /*
+
         Debug.Log(transform.rotation);
 
-        if (transform.rotation.z < -0.7 || transform.rotation.z > 0.7 && lookingLeft == false)
+        if (transform.rotation.z < -0.7 || transform.rotation.z > 0.7 && PlayerMovement.lookingLeft == false)
         {
-            
+
             //SpriteRenderer spriteRend = GetComponent<SpriteRenderer>();
             //spriteRend.flipY = true;
             //transform.position += new Vector3(0, 0.1f,0);
-                
-            lookingLeft = true;
+
+            PlayerMovement.lookingLeft = true;
             gunLeft.SetActive(true);
             gunRight.SetActive(false);
 
         }
-        if ((transform.rotation.z > -0.7 && transform.rotation.z < 0.7) && lookingLeft == true)
+        if ((transform.rotation.z > -0.7 && transform.rotation.z < 0.7) && PlayerMovement.lookingLeft == true)
         {
-           // GetComponent<SpriteRenderer>().flipY = false;
+            // GetComponent<SpriteRenderer>().flipY = false;
             //transform.position -= new Vector3(0, 0.1f, 0);
-            lookingLeft = false;
+            PlayerMovement.lookingLeft = false;
             gunRight.SetActive(true);
             gunLeft.SetActive(false);
 
         }
+        */
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -79,6 +82,7 @@ public class PistolGun : MonoBehaviour
                 lastShot = Time.time;
             }
         }
+        
     }
 
 

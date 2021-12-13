@@ -6,6 +6,7 @@ public class FollowCursor : MonoBehaviour
 {
 
     public static float lookAngle;
+    public static Quaternion rotation;
     void Update()
     {
 
@@ -15,8 +16,14 @@ public class FollowCursor : MonoBehaviour
         Vector3 gm = mp - pp;
         gm.Normalize();
 
+        
+
         lookAngle = Mathf.Atan2(gm.y, gm.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, 0, lookAngle);
+
+        rotation = transform.rotation;
+
+        
     }
 }

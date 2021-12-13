@@ -11,8 +11,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float velocity;
 
-    public static bool isOnGround;
-    
+    public static bool isOnGround;      
+
+    public static bool lookingLeft;
+    private bool playerJumped;
+    public static bool playerMovingRight;
+
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -20,17 +24,35 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        horizontal = Input.GetAxisRaw("Horizontal"); 
+
         if (isOnGround && Input.GetKeyDown(KeyCode.Space))
         {
-            playerBody.velocity = Vector2.up * jumpForce;
+
+            playerJumped = true;
+            
             isOnGround = false;
+        }
+
+        if (horizontal > 0)
+        {
+            playerMovingRight = true;
+        }
+        if(horizontal < 0)
+        {
+            playerMovingRight = false;
         }
     }
 
     void FixedUpdate()
     {
-        playerBody.velocity = new Vector2(horizontal * velocity, playerBody.velocity.y); 
+        playerBody.velocity = new Vector2(horizontal * velocity, playerBody.velocity.y);
+
+        if (playerJumped)
+        {
+            playerBody.velocity = Vector2.up * jumpForce;
+            playerJumped = false;
+        }
     }
 }
 

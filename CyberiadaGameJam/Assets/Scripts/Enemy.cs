@@ -5,12 +5,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+        if (collision.collider.CompareTag("Bullet"))
         {
-          Object.Destroy(gameObject);
+            Object.Destroy(gameObject);
         }
     }
 
 }
+
+

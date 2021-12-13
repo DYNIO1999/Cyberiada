@@ -9,8 +9,9 @@ public class BulletCheck : MonoBehaviour
     public float range_limit = 100;
     int bounce_count = 0;
 
-    private float bounceOffAngle;
+    
     private Vector2 prd;
+
     void Start(){
          prd= GetComponent<Rigidbody2D>().velocity;
     }
@@ -36,7 +37,7 @@ public class BulletCheck : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){//(Collider2D collision, Collision2D col){
+    private void OnCollisionEnter2D(Collision2D collision){
         if (collision.collider.CompareTag("Enemy"))
         {
             Object.Destroy(gameObject);
