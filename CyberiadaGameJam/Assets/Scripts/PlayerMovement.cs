@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool lookingLeft;
     private bool playerJumped;
     public static bool playerMovingRight;
+    public static Vector3 playerPosition;
 
     void Start()
     {
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerMovingRight = false;
         }
+        playerPosition = transform.position;
     }
 
     void FixedUpdate()

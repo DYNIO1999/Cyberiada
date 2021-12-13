@@ -5,8 +5,8 @@ using UnityEngine;
 public class BulletCheck : MonoBehaviour
 {
 
-    
-    public float range_limit = 100;
+    [SerializeField]
+    private float range_limit;
     int bounce_count = 0;
 
     
@@ -29,8 +29,8 @@ public class BulletCheck : MonoBehaviour
 
     void Update()
     {
-        
-        if(Mathf.Abs(transform.position.x) > range_limit || Mathf.Abs(transform.position.y) > range_limit)
+        if (transform.position.x > PlayerMovement.playerPosition.x+range_limit || transform.position.x< PlayerMovement.playerPosition.x-range_limit
+        || transform.position.y > PlayerMovement.playerPosition.y+range_limit || transform.position.y < PlayerMovement.playerPosition.y - range_limit)
         {
             Object.Destroy(gameObject);
         }
@@ -43,7 +43,10 @@ public class BulletCheck : MonoBehaviour
             Object.Destroy(gameObject);
         }
 
-
+        if (collision.collider.CompareTag("Ground"))
+        {
+            Object.Destroy(gameObject);
+        }
 
         if (collision.collider.CompareTag("Wall"))
         {
