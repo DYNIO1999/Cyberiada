@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5633157560163691780}
   - component: {fileID: 5000873154475630863}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RampRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 2593269900942082629}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3c104cf940cd7c843a2cc67e9c71e951, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

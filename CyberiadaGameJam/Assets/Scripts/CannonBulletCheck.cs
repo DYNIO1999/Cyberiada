@@ -21,5 +21,9 @@ public class CannonBulletCheck : MonoBehaviour
         if(collision.collider.CompareTag("Player")){
             Object.Destroy(gameObject);
         }
+        if (collision.collider.CompareTag("Ground"))
+        {
+            Object.Destroy(gameObject);
+        }
     }
 }
