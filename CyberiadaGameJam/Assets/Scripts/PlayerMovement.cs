@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float velocity;
 
     public static bool isOnGround;
-    
+
+    public static Vector3 playerPosition;
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
             playerBody.velocity = Vector2.up * jumpForce;
             isOnGround = false;
         }
+        playerPosition = transform.position;
     }
 
     void FixedUpdate()

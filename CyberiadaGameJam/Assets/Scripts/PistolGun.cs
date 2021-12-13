@@ -30,6 +30,8 @@ public class PistolGun : MonoBehaviour
     public static float lookAngle;
     public static bool lookingLeft;
 
+   
+
     private void Update()
     {
 
@@ -47,7 +49,9 @@ public class PistolGun : MonoBehaviour
 
         //transform.position = new Vector3(gm.x, gm.y, 0) + pp;
 
-        Debug.Log(transform.rotation);
+        
+
+        //Debug.Log(transform.rotation);
 
         if (transform.rotation.z < -0.7 || transform.rotation.z > 0.7 && lookingLeft == false)
         {
@@ -59,6 +63,7 @@ public class PistolGun : MonoBehaviour
             lookingLeft = true;
             gunLeft.SetActive(true);
             gunRight.SetActive(false);
+
 
         }
         if ((transform.rotation.z > -0.7 && transform.rotation.z < 0.7) && lookingLeft == true)
@@ -79,6 +84,7 @@ public class PistolGun : MonoBehaviour
                 lastShot = Time.time;
             }
         }
+
     }
 
 
