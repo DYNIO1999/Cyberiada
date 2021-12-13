@@ -13,18 +13,21 @@ public class PlayerMovement : MonoBehaviour
 
     
     Animator anim;
+     
+    public static bool lookingLeft;
+    private bool playerJumped;
+    public static Vector3 playerPosition;
+
 
     public static bool isOnGroundLeft;
     public static bool isOnGroundMiddle;
     public static bool isOnGroundRight;
-    public static bool lookingLeft;
-    private bool playerJumped;
-    public static Vector3 playerPosition;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         playerBody = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
@@ -35,9 +38,9 @@ public class PlayerMovement : MonoBehaviour
         {
 
             playerJumped = true;
-            
+
             isOnGroundLeft = false;
-            isOnGroundMiddle = false;
+            isOnGroundMiddle =false;
             isOnGroundRight = false;
         }
 

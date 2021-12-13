@@ -24,7 +24,7 @@ public class ColisionOnPlayerDown : MonoBehaviour
     private bool IsGrounded()
     {
         RaycastHit2D rayCastHit =Physics2D.Raycast(transform.position,Vector2.down,0.1f,groundLayerMask);
-        // Debug.Log(rayCastHit.collider);
+        Debug.Log(rayCastHit.collider);
         return rayCastHit.collider!=null;
     }
 }
