@@ -13,12 +13,16 @@ public class PlayerMovement : MonoBehaviour
 
     
     Animator anim;
-
-    public static bool isOnGround;      
+     
     public static bool lookingLeft;
     private  bool playerJumped;
     public static bool playerMovingRight;
     public static Vector3 playerPosition;
+
+
+    public static bool isOnGroundLeft;
+    public static bool isOnGroundMiddle;
+    public static bool isOnGroundRight;
 
     void Start()
     {
