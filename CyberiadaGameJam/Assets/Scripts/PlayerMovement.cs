@@ -11,8 +11,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float velocity;
 
-    public static bool isOnGround;      
+    
+    Animator anim;
 
+    public static bool isOnGround;      
     public static bool lookingLeft;
     private bool playerJumped;
     public static bool playerMovingRight;
@@ -20,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         playerBody = GetComponent<Rigidbody2D>();
     }
 
@@ -35,13 +38,34 @@ public class PlayerMovement : MonoBehaviour
             isOnGround = false;
         }
 
+        if (lookingLeft == false)
+        {
+            anim.SetBool("IsLeftActive", false);
+        }
+        else
+        {
+            anim.SetBool("IsLeftActive", true);
+        }
+
+        horizontal = Input.GetAxisRaw("Horizontal");
+        if (horizontal == 0)
+        {
+            anim.SetBool("IsRunningLeft", false);
+            anim.SetBool("IsRunningRight", false);
+        }
+
+        horizontal = Input.GetAxisRaw("Horizontal");
         if (horizontal > 0)
         {
+            anim.SetBool("IsRunningRight", true);
             playerMovingRight = true;
         }
-        if(horizontal < 0)
+
+        horizontal = Input.GetAxisRaw("Horizontal");
+        if (horizontal < 0)
         {
             playerMovingRight = false;
+            anim.SetBool("IsRunningLeft", true);
         }
         playerPosition = transform.position;
     }

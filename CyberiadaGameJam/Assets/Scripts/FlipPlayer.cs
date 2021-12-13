@@ -16,14 +16,8 @@ public class FlipPlayer : MonoBehaviour
 
     void Update()
     {
-        if (((FollowCursor.rotation.z < -0.7 && FollowCursor.rotation.z >-1f) || FollowCursor.rotation.z > 0.7) && PlayerMovement.lookingLeft == false )
+        if (((FollowCursor.rotation.z < -0.71 && FollowCursor.rotation.z >-1f) || FollowCursor.rotation.z > 0.71) && PlayerMovement.lookingLeft == false )
         {
-
-            //SpriteRenderer spriteRend = GetComponent<SpriteRenderer>();
-            //spriteRend.flipY = true;
-            //transform.position += new Vector3(0, 0.1f,0);
-
-            Debug.Log("Patrze w lewo! " +FollowCursor.rotation);
 
             PlayerMovement.lookingLeft = true;
 
@@ -31,23 +25,17 @@ public class FlipPlayer : MonoBehaviour
             playerRight.SetActive(false);
             playerLeft.SetActive(true);
             transform.position = rightPostion;
-            
-
         }
-        if ((FollowCursor.rotation.z > -0.7 && FollowCursor.rotation.z < 0.7) && PlayerMovement.lookingLeft == true )
+
+        if ((FollowCursor.rotation.z > -0.69 && FollowCursor.rotation.z < 0.69) && PlayerMovement.lookingLeft == true )
         {
 
-            Debug.Log("Patrze w prawo! "+FollowCursor.rotation);
-            // GetComponent<SpriteRenderer>().flipY = false;
-            //transform.position -= new Vector3(0, 0.1f, 0);
             PlayerMovement.lookingLeft = false;
 
             leftPostion = transform.position;
             playerLeft.SetActive(false);
             playerRight.SetActive(true);
             transform.position = leftPostion;
-            
-
         }
     }
 }
