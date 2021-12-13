@@ -14,7 +14,9 @@ public class PlayerMovement : MonoBehaviour
     
     Animator anim;
 
-    public static bool isOnGround;      
+    public static bool isOnGroundLeft;
+    public static bool isOnGroundMiddle;
+    public static bool isOnGroundRight;
     public static bool lookingLeft;
     private bool playerJumped;
     public static Vector3 playerPosition;
@@ -29,12 +31,14 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal"); 
 
-        if (isOnGround && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) )
+        if ((isOnGroundLeft || isOnGroundMiddle || isOnGroundRight) && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) )
         {
 
             playerJumped = true;
             
-            isOnGround = false;
+            isOnGroundLeft = false;
+            isOnGroundMiddle = false;
+            isOnGroundRight = false;
         }
 
         if (lookingLeft == false)
