@@ -7,7 +7,12 @@ public class BulletCheck : MonoBehaviour
 
     [SerializeField]
     private float range_limit;
+    
+    [SerializeField]
+
+    private int max_bounce_count;
     int bounce_count = 0;
+
 
     
     private Vector2 prd;
@@ -15,7 +20,7 @@ public class BulletCheck : MonoBehaviour
     void Start(){
          prd= GetComponent<Rigidbody2D>().velocity;
     }
-    private void BounceOff(Collision2D collision)
+    /*private void BounceOff(Collision2D collision)
     {
         float zwrot = (Vector2.Dot(prd,collision.contacts[0].normal));
 
@@ -24,8 +29,9 @@ public class BulletCheck : MonoBehaviour
         }else{
             prd = new Vector2(zwrot*(-1), prd.y);
         }
+
         GetComponent<Rigidbody2D>().velocity = prd;
-    }
+    }*/
 
     void Update()
     {
@@ -43,19 +49,19 @@ public class BulletCheck : MonoBehaviour
             Object.Destroy(gameObject);
         }
 
-        if (collision.collider.CompareTag("Ground"))
+        /*if (collision.collider.CompareTag("Ground"))
         {
             Object.Destroy(gameObject);
-        }
+        }*/
 
         if (collision.collider.CompareTag("Wall"))
         {
             bounce_count++;
-            if (bounce_count > 1)
+            if (bounce_count > max_bounce_count)
             {
                 Object.Destroy(gameObject);
             }
-            BounceOff(collision);
+            //BounceOff(collision);
         }
 
     }

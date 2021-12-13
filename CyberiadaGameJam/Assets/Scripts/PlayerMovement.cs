@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public static bool isOnGround;      
     public static bool lookingLeft;
-    private bool playerJumped;
+    private  bool playerJumped;
     public static bool playerMovingRight;
     public static Vector3 playerPosition;
 
@@ -24,18 +24,21 @@ public class PlayerMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         playerBody = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal"); 
 
-        if (isOnGround && Input.GetKeyDown(KeyCode.Space))
+        if ((isOnGroundLeft || isOnGroundMiddle || isOnGroundRight) && Input.GetKeyDown(KeyCode.Space))
         {
 
             playerJumped = true;
-            
-            isOnGround = false;
+
+            isOnGroundLeft = false;
+            isOnGroundMiddle =false;
+            isOnGroundRight = false;
         }
 
         if (lookingLeft == false)
