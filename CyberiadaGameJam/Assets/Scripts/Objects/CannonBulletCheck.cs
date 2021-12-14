@@ -49,6 +49,11 @@ public class CannonBulletCheck : MonoBehaviour
             Object.Destroy(gameObject);
         }
 
+        if (collision.collider.CompareTag("GroundToDestroy"))
+        {
+            Object.Destroy(gameObject);
+        }
+
         if (collision.collider.CompareTag("Bullet"))
         {
             bounce_count++;
