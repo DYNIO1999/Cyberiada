@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5830834428778057354}
   m_Layer: 3
   m_Name: StaticGameBlockLevel2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c549da9d91bda1d4c871d6c942e97826, type: 3}
-  m_Color: {r: 0, g: 0.8918014, b: 0.9245283, a: 1}
+  m_Color: {r: 0.105882354, g: 0.45882353, b: 0.62352943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

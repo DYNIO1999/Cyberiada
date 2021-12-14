@@ -5,6 +5,9 @@ using UnityEngine;
 public class ButtonShooted : MonoBehaviour
 {
     [SerializeField]
+    GameObject wallObject;
+    
+    [SerializeField]
     private float movespeed;
 
     [SerializeField]
@@ -43,6 +46,7 @@ public class ButtonShooted : MonoBehaviour
 
         if(buttonIsShooted){
             Object.Destroy(gameObject);
+            Object.Destroy(wallObject);
         }
     }
 
