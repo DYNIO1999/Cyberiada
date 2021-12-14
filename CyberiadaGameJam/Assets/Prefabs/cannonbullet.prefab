@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1783061088054120970}
   m_Layer: 7
   m_Name: cannonbullet
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5673766939037347299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.749, y: -2.426, z: 0}
-  m_LocalScale: {x: 0.015, y: 0.015, z: 0.036908478}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -117,7 +117,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 84023b4a095b5144b871aba5ca46bbee, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -134,3 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b589552f2a0b4342a9abca57434dab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range_limit: 200
+  max_bounce_count: 1

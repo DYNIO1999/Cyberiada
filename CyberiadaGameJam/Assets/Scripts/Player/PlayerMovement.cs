@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GameControler.gameIsPaused == false)
         {
-            //Debug.Log("skok");
+
             horizontal = Input.GetAxisRaw("Horizontal");
 
             if ((isOnGroundLeft || isOnGroundMiddle || isOnGroundRight) && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
@@ -75,7 +75,9 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("IsRunningLeft", true);
             }
         }
+
         playerPosition = transform.position;
+
     }
 
     void FixedUpdate()

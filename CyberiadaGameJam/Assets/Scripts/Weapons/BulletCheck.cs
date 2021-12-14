@@ -64,6 +64,16 @@ public class BulletCheck : MonoBehaviour
             //BounceOff(collision);
         }
 
+        if (collision.collider.CompareTag("Ground"))
+        {
+            bounce_count++;
+            if (bounce_count > max_bounce_count)
+            {
+                Object.Destroy(gameObject);
+            }
+            //BounceOff(collision);
+        }
+
     }
   
 }
