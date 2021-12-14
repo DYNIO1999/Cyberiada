@@ -49,10 +49,6 @@ public class BulletCheck : MonoBehaviour
             Object.Destroy(gameObject);
         }
 
-        /*if (collision.collider.CompareTag("Ground"))
-        {
-            Object.Destroy(gameObject);
-        }*/
 
         if (collision.collider.CompareTag("Wall"))
         {
