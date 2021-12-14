@@ -15,7 +15,7 @@ public class NewCannonShoot : MonoBehaviour
     float fireRate;
 
     private float lastShot = 0.0f;
-
+    //Here
     void Start()
     {
         
