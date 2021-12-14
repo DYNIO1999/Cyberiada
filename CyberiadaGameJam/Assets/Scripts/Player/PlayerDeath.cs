@@ -15,7 +15,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if (collision.collider.CompareTag("Enemy"))
         {
-            Debug.Log("You died");
+            //Debug.Log("You died");
             Instantiate(deadPlayer, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
             //Time.timeScale = 0;

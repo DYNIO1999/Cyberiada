@@ -15,6 +15,12 @@ public class GameControler : MonoBehaviour
     [SerializeField]
     GameObject winMenu;
 
+    [SerializeField]
+    GameObject deathMenus;
+
+    [SerializeField]
+    GameObject winMenus;
+
     private void Awake()
     {
         Time.timeScale = 1f;
@@ -22,6 +28,8 @@ public class GameControler : MonoBehaviour
         pauseMenu.SetActive(false);
         deathMenu.SetActive(false);
         winMenu.SetActive(false);
+        deathMenus.SetActive(false);
+        winMenus.SetActive(false);
 
 
     }

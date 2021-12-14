@@ -9,7 +9,7 @@ public class WinGame : MonoBehaviour
 
     [SerializeField]
     GameObject Player;
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,4 +21,6 @@ public class WinGame : MonoBehaviour
             winScreen.SetActive(true);
         }
     }
+
+    
 }
