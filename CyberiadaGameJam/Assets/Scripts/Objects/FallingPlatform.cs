@@ -38,5 +38,10 @@ public class FallingPlatform : MonoBehaviour
         if(collision.collider.CompareTag("Enemy")){
             Object.Destroy(gameObject);
         }
+
+        if (collision.collider.CompareTag("Ground"))
+        {
+            Object.Destroy(gameObject);
+        }
     }
 }

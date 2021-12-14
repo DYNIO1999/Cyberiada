@@ -19,7 +19,7 @@ public class PistolGun : MonoBehaviour
     [SerializeField]
     float fireRate;
 
-    private float lastShot = 0.0f;
+    public static float lastShot = 0.0f;
 
     public static float lookAngle;
     

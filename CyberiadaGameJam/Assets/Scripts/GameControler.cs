@@ -9,11 +9,6 @@ public class GameControler : MonoBehaviour
     [SerializeField]
     GameObject pauseMenu;
 
-    [SerializeField]
-    GameObject deathMenu;
-
-    [SerializeField]
-    GameObject winMenu;
 
     [SerializeField]
     GameObject deathMenus;
@@ -26,8 +21,6 @@ public class GameControler : MonoBehaviour
         Time.timeScale = 1f;
         gameIsPaused = false;
         pauseMenu.SetActive(false);
-        deathMenu.SetActive(false);
-        winMenu.SetActive(false);
         deathMenus.SetActive(false);
         winMenus.SetActive(false);
 
