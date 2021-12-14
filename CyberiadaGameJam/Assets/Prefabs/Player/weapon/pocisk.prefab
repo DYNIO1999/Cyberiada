@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range_limit: 100
-  max_bounce_count: 5
+  max_bounce_count: 2
 --- !u!50 &-3211347584025477618
 Rigidbody2D:
   serializedVersion: 4
@@ -149,7 +149,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4829883e2d39ac543bb58c1a98b6fd1c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
