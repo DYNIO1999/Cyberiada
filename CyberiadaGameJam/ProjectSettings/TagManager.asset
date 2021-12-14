@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Wall
   - Ground
+  - GroundToDestroy
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Gra
   - Gracz
   - Pocisk
-  - Wall
+  - FallingPlatform
   - 
   - 
   - 
