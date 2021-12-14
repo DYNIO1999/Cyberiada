@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4033798685790279094}
   - component: {fileID: 4886379000043687971}
-  m_Layer: 0
+  - component: {fileID: 2203660253746187436}
+  m_Layer: 7
   m_Name: DeadlyRotationPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10283518, y: 0.0137114525}
+  m_Offset: {x: 0.004384756, y: 0.0071480274}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,8 +57,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.803731, y: 1.6728876}
+  m_Size: {x: 9.764351, y: 1.6597607}
   m_EdgeRadius: 0
+--- !u!114 &2203660253746187436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676382105829502716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed458fe75811d540beae6aed758e7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 5
 --- !u!1 &8518771997123038161
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2642855324875306522}
   - component: {fileID: 8067692007193162702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: patyk_co_sie_kreci
   m_TagString: Untagged
   m_Icon: {fileID: 0}
