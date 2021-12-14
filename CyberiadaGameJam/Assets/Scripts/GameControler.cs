@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class GameControler : MonoBehaviour
 {
-    public  bool gameIsPaused;
+    public static bool gameIsPaused;
+
+    [SerializeField]
+    GameObject pauseMenu;
+
+    [SerializeField]
+    GameObject deathMenu;
+
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        pauseMenu.SetActive(false);
+        deathMenu.SetActive(false);
+
+
+    }
 
     void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.Escape) && gameIsPaused == false)
         {
-            gameIsPaused = true; 
+            Debug.Log("Pauza");
+            
             PauseGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && gameIsPaused == true)
+        else if(Input.GetKeyDown(KeyCode.Escape) && gameIsPaused == true)
         {
-            gameIsPaused = false;
+            Debug.Log("UnPauzuje");
             UnPauseGame();
         }
 
@@ -25,15 +42,18 @@ public class GameControler : MonoBehaviour
 
     private void PauseGame()
     {
-
+        Debug.Log("Pauzujeeeee");
+        gameIsPaused = true;
         Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
 
     }
 
     private void UnPauseGame()
     {
-
+        Debug.Log("Wlaczaam");
+        gameIsPaused = false;
         Time.timeScale = 1f;
-
+        pauseMenu.SetActive(false);
     }
 }
