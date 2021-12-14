@@ -32,44 +32,48 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal"); 
-
-        if ((isOnGroundLeft || isOnGroundMiddle || isOnGroundRight) && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) )
+        if (GameControler.gameIsPaused == false)
         {
+            //Debug.Log("skok");
+            horizontal = Input.GetAxisRaw("Horizontal");
 
-            playerJumped = true;
+            if ((isOnGroundLeft || isOnGroundMiddle || isOnGroundRight) && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
+            {
 
-            isOnGroundLeft = false;
-            isOnGroundMiddle =false;
-            isOnGroundRight = false;
-        }
+                playerJumped = true;
 
-        if (lookingLeft == false)
-        {
-            anim.SetBool("IsLeftActive", false);
-        }
-        else
-        {
-            anim.SetBool("IsLeftActive", true);
-        }
+                isOnGroundLeft = false;
+                isOnGroundMiddle = false;
+                isOnGroundRight = false;
+            }
 
-        horizontal = Input.GetAxisRaw("Horizontal");
-        if (horizontal == 0)
-        {
-            anim.SetBool("IsRunningLeft", false);
-            anim.SetBool("IsRunningRight", false);
-        }
+            if (lookingLeft == false)
+            {
+                anim.SetBool("IsLeftActive", false);
+            }
+            else
+            {
+                anim.SetBool("IsLeftActive", true);
+            }
 
-        horizontal = Input.GetAxisRaw("Horizontal");
-        if (horizontal > 0)
-        {
-            anim.SetBool("IsRunningRight", true);
-        }
+            horizontal = Input.GetAxisRaw("Horizontal");
+            if (horizontal == 0)
+            {
+                anim.SetBool("IsRunningLeft", false);
+                anim.SetBool("IsRunningRight", false);
+            }
 
-        horizontal = Input.GetAxisRaw("Horizontal");
-        if (horizontal < 0)
-        {
-            anim.SetBool("IsRunningLeft", true);
+            horizontal = Input.GetAxisRaw("Horizontal");
+            if (horizontal > 0)
+            {
+                anim.SetBool("IsRunningRight", true);
+            }
+
+            horizontal = Input.GetAxisRaw("Horizontal");
+            if (horizontal < 0)
+            {
+                anim.SetBool("IsRunningLeft", true);
+            }
         }
         playerPosition = transform.position;
     }

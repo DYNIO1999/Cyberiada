@@ -27,7 +27,7 @@ public class PistolGun : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameControler.gameIsPaused == false)
         {
             if (Time.time > fireRate + lastShot)
             {

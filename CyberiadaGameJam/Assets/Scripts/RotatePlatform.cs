@@ -7,6 +7,6 @@ public class RotatePlatform : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     void Update()
     {
-        transform.Rotate(new Vector3(0,0,1)* rotationSpeed,Space.Self);
+        transform.Rotate(new Vector3(0,0,1)* rotationSpeed * Time.deltaTime,Space.Self);
     }
 }

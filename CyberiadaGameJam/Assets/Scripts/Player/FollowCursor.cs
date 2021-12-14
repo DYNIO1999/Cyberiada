@@ -9,21 +9,22 @@ public class FollowCursor : MonoBehaviour
     public static Quaternion rotation;
     void Update()
     {
+        if (GameControler.gameIsPaused == false)
+        {
+            Vector3 pp = transform.position;
+            Vector3 mp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mp.z = 0;
+            Vector3 gm = mp - pp;
+            gm.Normalize();
 
-        Vector3 pp = transform.position;
-        Vector3 mp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mp.z = 0;
-        Vector3 gm = mp - pp;
-        gm.Normalize();
 
-        
 
-        lookAngle = Mathf.Atan2(gm.y, gm.x) * Mathf.Rad2Deg;
+            lookAngle = Mathf.Atan2(gm.y, gm.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0, 0, lookAngle);
+            transform.rotation = Quaternion.Euler(0, 0, lookAngle);
 
-        rotation = transform.rotation;
+            rotation = transform.rotation;
 
-        
+        }
     }
 }
