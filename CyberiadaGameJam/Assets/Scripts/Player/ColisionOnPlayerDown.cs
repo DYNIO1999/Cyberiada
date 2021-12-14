@@ -8,7 +8,6 @@ public class ColisionOnPlayerDown : MonoBehaviour
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private int legType;
 
-    // Start is called before the first frame update
     void Update(){
         if(legType ==1){
         PlayerMovement.isOnGroundLeft=IsGrounded();
@@ -24,7 +23,6 @@ public class ColisionOnPlayerDown : MonoBehaviour
     private bool IsGrounded()
     {
         RaycastHit2D rayCastHit =Physics2D.Raycast(transform.position,Vector2.down,0.1f,groundLayerMask);
-        //Debug.Log(rayCastHit.collider);
         return rayCastHit.collider!=null;
     }
 }
