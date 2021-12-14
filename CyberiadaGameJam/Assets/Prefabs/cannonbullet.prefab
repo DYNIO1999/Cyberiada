@@ -135,4 +135,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range_limit: 200
-  max_bounce_count: 1
+  max_bounce_count: 2

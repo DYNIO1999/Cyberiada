@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range_limit: 100
-  max_bounce_count: 5
+  max_bounce_count: 2
 --- !u!50 &-3211347584025477618
 Rigidbody2D:
   serializedVersion: 4
